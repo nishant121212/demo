@@ -22,7 +22,7 @@ public class UserService {
         User user = new User();
         user.setName(userRequest.name());
         user.setEmail(userRequest.email());
-        //user.setAge(userRequest.age());
+        user.setAge(userRequest.age());
         return userRepository.save(user);
     }
 }
