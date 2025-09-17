@@ -11,6 +11,12 @@ curl --location --request POST 'http://localhost:8080/users' \
     "age" : 30
 }'
 
+curl --location 'https://9a2acf0fff1a.ngrok-free.app/v1/inputs' \
+--header 'Content-Type: application/json' \
+--data '{
+"url" : "https://patch-diff.githubusercontent.com/raw/nishant121212/demo/pull/5.diff"
+}'
+
 
 
 2025-09-15T17:26:36.426+05:30 ERROR 26056 --- [demo] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.toLowerCase()" because the return value of "com.example.demo.modelanddto.UserRequest.email()" is null] with root cause
@@ -30,3 +36,6 @@ java.lang.NullPointerException: Cannot invoke "String.toLowerCase()" because the
 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.10.jar:6.2.10]
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.10.jar:6.2.10]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.10.jar:6.2.10]
+
+
+
