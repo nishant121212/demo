@@ -11,6 +11,8 @@ import java.util.List;
 @Service
 public class UserService {
 
+    // Test comment
+
     @Autowired
     private UserRepository userRepository;
 
@@ -20,9 +22,9 @@ public class UserService {
 
     public User createUser(UserRequest userRequest) {
         User user = new User();
-        user.setName(userRequest.name());
-        user.setEmail(userRequest.email());
+        user.setName(userRequest.name().upperCase());
         user.setAge(userRequest.age());
+        //TestComment
         return userRepository.save(user);
     }
 }
