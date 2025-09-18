@@ -15,7 +15,10 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userRepository.findAll()
+                .stream()
+                .filter(user -> user.getAge() >= 18)
+                .toList();
     }
 
     public User createUser(UserRequest userRequest) {
