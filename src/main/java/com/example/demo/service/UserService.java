@@ -22,7 +22,10 @@ public class UserService {
         User user = new User();
         user.setName(userRequest.name());
         user.setEmail(userRequest.email());
-        //user.setAge(userRequest.age());
+        user.setAge(userRequest.age());
+        if (!userRequest.email().toLowerCase().contains("gmail.com")) {
+            throw new IllegalArgumentException("Email must contain 'gmail'");
+        }
         return userRepository.save(user);
     }
 }
